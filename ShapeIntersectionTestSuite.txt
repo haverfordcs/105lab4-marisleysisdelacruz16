@@ -6,5 +6,389 @@
 >>> SI.doesIntersectRect(Rect1,Rect2)
 True
 
+Test case 1
+>>> import ShapeIntersection as SI
+
+Test case 2
+>>> SI.doesIntersectCirc([(100,100),50],[(210,100),60]) #tangent
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Both, center of Circ1 and center of Circ2 are valid points
+Both, radius of Circ1 and radius of Circ2 are valid
+Circ1 and Cir2 intersect with each other
+True
+
+Test case 3
+>>> SI.doesIntersectCirc([(100,200),50],[(100,200),75]) #concentric
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Both, center of Circ1 and center of Circ2 are valid points
+Both, radius of Circ1 and radius of Circ2 are valid
+Circ1 and Cir2 intersect with each other
+True
+
+Test case 4
+>>> SI.doesIntersectCirc([(100,100),0],[(100,130),40]) #point circle
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Both, center of Circ1 and center of Circ2 are valid points
+Both, radius of Circ1 and radius of Circ2 are valid
+Circ1 and Cir2 intersect with each other
+True
+
+Test case 5
+>>> SI.doesIntersectCirc([(100,100),1.0],[(0,0),40]) #point circle
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Both, center of Circ1 and center of Circ2 are valid points
+Both, radius of Circ1 and radius of Circ2 are valid
+Circ1 and Cir2 does not intersect with each other
+False
+
+Test case 6
+>>> SI.doesIntersectCirc([("0",0),4],[(100.5,20.5),24.6])
+The coordinates are unreal
+The elements of the tuple are real and valid coordinate of a point
+Center of Circ2 is a valid point but Center of Cir1 is not
+
+Test case 7
+>>> SI.doesIntersectCirc([(100.5,20.5),24.6], [(0,"0"),4])
+The elements of the tuple are real and valid coordinate of a point
+The coordinates are unreal
+Center of Circ1 is a valid point but Center of Cir2 is not
+
+Test case 8
+>>> SI.doesIntersectCirc([(100.5,"20.5"),24.6], [(0,"0"),4])
+The coordinates are unreal
+The coordinates are unreal
+Neither center of Circ1 is a valid point nor the Center of Cir2
+
+Test case 9
+>>> SI.doesIntersectCirc([(0,0),-5],[(2,4),6.7])
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Radius of Circ2 is a valid but Radius of Cir1 is not
+
+Test case 10
+>>> SI.doesIntersectCirc([(0,0),45],[(2,4),-6.7])
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Radius of Circ1 is a valid but Radius of Cir2 is not
+
+Test case 11
+>>> SI.doesIntersectCirc([(0,0),-5.8],[(2,4),-0.5])
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Neither the Radius of Circ1 is a valid nor the Radius of Cir2
+
+Test case 12
+>>> SI.doesIntersectRect([("0",0),(0,0),(2,4),(100,100)],[(0,0),(2,0),(2,2),(0,2)])
+The coordinates are unreal
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for Rect2 form a rectangle but points supplied for Rect1 do not
+
+
+Test case 13
+>>> SI.doesIntersectRect([(0,0),(1,1),(1,3),(0,2)],[(0,0),(2,0),(2,2),(0,2)])#paralellogram
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for Rect2 form a rectangle but points supplied for Rect1 do not
+
+Test case 14
+>>> SI.doesIntersectRect([(0,0),(2,0),(2,4),(0,4)],[(0,0),("2",0),(2,2),(0,2)])
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The coordinates are unreal
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for Rect1 form a rectangle but points supplied for Rect2 do not
+
+Test case 15
+>>> SI.doesIntersectRect([(0,0),(0,0),(2,4),(100,100)],[(0,0),(2,0),(2,2),(0,-2)])#crossing line segments
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 do not form rectangle
+
+Test case 16
+>>> SI.doesIntersectRect([(0,0),(2,0),(2,2),(0,2)],[(0,0),(-1,0),(2,3),(0,2)])#trapezoid
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for Rect1 form a rectangle but points supplied for Rect2 do not
+
+Test case 17
+
+>>> SI.doesIntersectRect([(-1,0),(0,-1),(1,0),(0,1)],[(0,0),(2,0),(2,2),(0,2)])#diamond around origin
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Rect2 is parallel to x-axis while Rect1 is not
+
+Test case 18
+>>> SI.doesIntersectRect([(0,0),(2,0),(2,1),(0,1)],[(0,-10.0),(10.0,0),(0,10.0),(-10.0,0)])#big diamond
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Rect1 is parallel to x-axis while Rect2 is not
+
+Test case 19
+>>> SI.doesIntersectRect([(1,0),(2,1),(0,3),(-1,2)],[(0,-3.45),(3.45,0),(0,3.45),(-3.45,0)])#diamond & tilted
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Neither Rect1 and nor Rect2 is parallel to x-axis
+
+Test case 20
+>>> SI.doesIntersectRect([(0,0),(4,0),(4,2),(0,2)],[(4,2),(5,2),(5,5),(4,5)]) #touching at the top right corner point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 overlap with each other
+True
+
+Test case 21
+>>> SI.doesIntersectRect([(11,1),(15,1),(15,3),(11,3)],[(9,3),(13,3),(13,4),(9,4)]) #touching at top/bottom side
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 overlap with each other
+True
+
+Test case 22
+>>> SI.doesIntersectRect([(3,-4),(4,-4),(4,-3),(3,-3)],[(0,-6),(6,-6),(6,-2),(0,-2)]) #one inside the other
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 overlap with each other
+True
+
+Test case 23
+>>> SI.doesIntersectRect([(12,-6),(16,-6),(16,-2),(12,-2)],[(12,-4),(12,-4),(12,-2),(12,-2)]) #touching at left/right side, one rectangle is a line segment
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 overlap with each other
+True
+
+Test case 24
+>>> SI.doesIntersectRect([(-2,-1),(0.5,-1),(0.5,1.5),(-2,1.5)],[(0,0),(3,0),(3,2),(0,2)]) #overlapping corner
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 overlap with each other
+True
+
+Test case 25
+>>> SI.doesIntersectRect([(-3,-5),(1,-5),(1,-4),(-3,-4)],[(0,-7),(2,-7),(2,-3),(0,-3)]) #overlapping right/left side
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 overlap with each other
+True
+
+
+
+Test case 26
+>>> SI.doesIntersectRect([(12,-6),(16,-6),(16,-2),(12,-2)],[(14,-9),(15,-9),(15,-4),(14,-4)]) #overlapping bottom/top side
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 overlap with each other
+True
+
+>>> SI.doesIntersectRect([(0,0),(4,0),(4,2),(0,2)],[(-0.003,-0.003),(-0.003,-0.003),(-0.003,-0.003),(-0.003,-0.003)]) #missing bottom left point, one rectangle is a single point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 do not overlap with each other
+False
+
+>>> SI.doesIntersectRect([(11,1),(15,1),(15,3),(11,3)],[(9,3.5),(13,3.5),(13,4),(9,4)]) #X coords in range, Y not in range top side
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 do not overlap with each other
+False
+
+>>> SI.doesIntersectRect([(3,-4),(4,-4),(4,-3),(3,-3)],[(0,-6),(2.0,-6),(2.0,-2),(0,-2)]) #X coords not in range, Y coords in range, right side
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 do not overlap with each other
+False
+
+>>> SI.doesIntersectRect([(12,-6),(16,-6),(16,-2),(12,-2)],[(11.5,-4),(11.5,-4),(11.5,-2),(11.5,-2)]) #line segment on left side not touching
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 do not overlap with each other
+False
+
+>>> SI.doesIntersectRect([(-2,-1),(0.5,-1),(0.5,1.5),(-2,1.5)],[(1,1),(3,1),(3,2),(1,2)]) #close to but missing corner
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 do not overlap with each other
+False
+
+>>> SI.doesIntersectRect([(-3,-5),(-0.5,-5),(-0.5,-4),(-3,-4)],[(0,-7),(2,-7),(2,-3),(0,-3)]) #X coords not in range, Y in range, left side
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 do not overlap with each other
+False
+
+>>> SI.doesIntersectRect([(12,-6),(16,-6),(16,-2),(12,-2)],[(14,-9),(15,-9),(15,-6.5),(14,-6.5)]) #X coords in range, Y not in range bottom side
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+The elements of the tuple are real and valid coordinate of a point
+Points supplied for both Rect1 and Rect2 for rectangles
+Both Rect1 and Rect2 are parallel to x-axis
+Rect1 and Rect2 do not overlap with each other
+False
+
+“””
+
+
 ##### Create your own test cases such that all of the messages mentioned in ShapeIntersection.py get printed at least once
 """
